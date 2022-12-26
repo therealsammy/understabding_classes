@@ -20,6 +20,6 @@ class Manager(Employee):
 
     def print_employees(self):
         for employee in self.employees:
-            print("-->", employee.fullname())
+            print("-->", employee.fullname)
 
 

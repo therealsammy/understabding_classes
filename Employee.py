@@ -8,9 +8,11 @@ class Employee:
         self.last = last
         self.pay = pay
 
+    @property
     def email(self):
         return '{}.{}@email.com'.format(self.first, self.last)
 
+    @property
     def fullname(self):
         return '{} {}'.format(self.first, self.last)
 
