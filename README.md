@@ -1,4 +1,4 @@
-# Understanding Python First Class Functions, Closures, Classes, And Unit Tests
+# Understanding Python First Class Functions, Closures, Classes, And Unit Tests.
 
 This module shows fundermental and intermediate concepts of the `Python` programming language. [^1]
 
@@ -10,34 +10,98 @@ The topics are:
 - Unit Tests
 - Doctess
 
-## First Class Functions
+This is written for educational purposes.
+
+## [First Class Functions](www.geeksforgeeks.org)
+
+First class objects in a language are handled uniformly throughout. They may be stored in data structures, passed as arguments, or used in control structures. A programming language is said to support first-class functions if it treats functions as first-class objects. Python supports the concept of First Class functions.
 
 A first-class function is not a particular kind of function. All functions in Python are first-class functions.
 
-First-Class Functions are functions which are treated as so called "First-Class Citizens" (FCC). FCC's in a programming language are objects which:
+### Properties of first class functions:
 
-    Can be used as parameters
-    Can be used as a return value
-    Can be assigned to variables
-    Can be stored in data structures such as hash tables, lists, ...
-
-In essence, FCF's are variables of the type 'function' (or variables which point to a function). You can do with them everything you can do with a 'normal' variable.
-
-```python
-    def my_func(a, b):
-        return a + b
-
-    addition = my_func(2, 3)
-    print(addition())
-```
-
-This is a simplistic example of first class functions.
+- A function is an instance of the Object type.
+- You can store the function in a variable.
+- You can pass the function as a parameter to another function.
+- You can return the function from a function.
+- You can store them in data structures such as hash tables, lists.
 
 > To say that functions are first-class in a certain programming language means that they can be passed around and manipulated similarly to how you would pass around and manipulate other kinds of objects (like integers or strings). You can assign a function to a variable, pass it as an argument to another function, etc. The distinction is not that individual functions can be first class or not, but that entire languages may treat functions as first-class objects, or may not. [BrenBran - StackOverflow](https://stackoverflow.com/a/27392443)
 
+### Examples illustrating First Class functions in Python
+
+1. **Functions are objects**: Python functions are first class objects. In the example below, we are assigning function to a variable. This assignment doesn’t call the function. It takes the function object referenced by shout and creates a second name pointing to it, yell.
+
+```python
+# Python program to illustrate functions
+# can be treated as objects
+def shout(text):
+    return text.upper()
+  
+print (shout('Hello'))
+  
+yell = shout
+  
+print (yell('Hello'))
+```
+
+**Output:**
+
+    HELLO
+    HELLO
+
+2. **Functions can be passed as arguments to other functions:** Because functions are objects we can pass them as arguments to other functions. Functions that can accept other functions as arguments are also called higher-order functions. In the example below, we have created a function greet which takes a function as an argument.
+
+```python
+# Python program to illustrate functions
+# can be passed as arguments to other functions
+def shout(text):
+    return text.upper()
+  
+def whisper(text):
+    return text.lower()
+  
+def greet(func):
+    # storing the function in a variable
+    greeting = func("""Hi, I am created by a function
+                    passed as an argument.""")
+    print (greeting) 
+  
+greet(shout)
+greet(whisper)
+```
+
+**Output:**
+
+    HI, I AM CREATED BY A FUNCTION PASSED AS AN ARGUMENT.
+    hi, i am created by a function passed as an argument.
+
+3. **Functions can return another function:** Given that functions are objects we can return a function from another function. In the below example, the create_adder function returns adder function.
+
+```python
+# Python program to illustrate functions
+# Functions can return another function
+  
+def create_adder(x):
+    def adder(y):
+        return x+y
+  
+    return adder
+  
+add_15 = create_adder(15)
+  
+print (add_15(10))
+```
+
+**Output:**
+
+    25
+
+In essence, FCF's are variables of the type 'function' (or variables which point to a function). You can do with them everything you can do with a 'normal' variable.
+
 This is an extremely useful tool as they open the door to other topics dissused in this modules, like `closures`.
 
-## [Closures]()
+## [Closures](techvidan.com)
 
 Like nested loops, we can also nest functions. That said, Python gives us the power to define functions within functions.
 
