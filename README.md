@@ -21,7 +21,7 @@ First-Class Functions are functions which are treated as so called "First-Class 
     Can be assigned to variables
     Can be stored in data structures such as hash tables, lists, ...
 
-Actually, very roughly and simply put, FCF's are variables of the type 'function' (or variables which point to a function). You can do with them everything you can do with a 'normal' variable.
+In essence, FCF's are variables of the type 'function' (or variables which point to a function). You can do with them everything you can do with a 'normal' variable.
 
 ```python
     def my_func(a, b):
