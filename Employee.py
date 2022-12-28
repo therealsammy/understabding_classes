@@ -11,6 +11,7 @@ class Employee:
     @property
     def email(self):
         return '{}.{}@email.com'.format(self.first, self.last)
+        # firstname.lastname@email.com
 
     @property
     def fullname(self):
@@ -18,3 +19,4 @@ class Employee:
 
     def pay_raise(self):
         self.pay = int(self.pay * self.raise_amount)
+

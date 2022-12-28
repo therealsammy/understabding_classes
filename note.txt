@@ -1,0 +1,13 @@
+abstraction 
+encapsulation
+inherentance
+polymorphism
+
+mutable data structures:
+- lists
+- dictionaries
+
+What to read:
+- First class function
+- Inheritance
+- Importing files and modules
