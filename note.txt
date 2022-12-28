@@ -11,3 +11,6 @@ What to read:
 - First class function
 - Inheritance
 - Importing files and modules
+
+
+python3 -m unittest tests/test_employee.py
